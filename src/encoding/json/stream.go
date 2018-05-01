@@ -197,7 +197,7 @@ func (enc *Encoder) Encode(v interface{}) error {
 		return enc.err
 	}
 	e := newEncodeState()
-	err := e.marshal(v, encOpts{escapeHTML: enc.escapeHTML})
+	err := e.marshal(v, nil, encOpts{escapeHTML: enc.escapeHTML})
 	if err != nil {
 		return err
 	}
